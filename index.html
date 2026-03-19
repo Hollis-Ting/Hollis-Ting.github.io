@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>杨婷的设计作品集</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "微软雅黑", sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+    .header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .header p {
+      font-size: 18px;
+      color: #666;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 0 20px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .project-card h2 {
+      padding: 16px;
+      font-size: 18px;
+    }
+    .project-card p {
+      padding: 0 16px 20px;
+      color: #666;
+    }
+    .project-card a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>杨婷的设计作品集</h1>
+    <p>UI / VI / 包装 / 表盘设计</p>
+  </div>
+
+  <div class="projects-grid">
+    <!-- VI-浣月（翻页效果） -->
+    <div class="project-card">
+      <a href="vi-huanyue.html">
+        <img src="vi-huanyue/page_01.png" alt="VI-浣月封面">
+        <h2>VI-浣月</h2>
+        <p>品牌视觉识别系统 | 翻页展示</p>
+      </a>
+    </div>
+
+    <!-- VI-简吔（翻页效果） -->
+    <div class="project-card">
+      <a href="vi-jianye.html">
+        <img src="vi-jianye/page_01.png" alt="VI-简吔封面">
+        <h2>VI-简吔</h2>
+        <p>品牌视觉识别系统 | 翻页展示</p>
+      </a>
+    </div>
+
+    <!-- UI-祁幻视界 -->
+    <div class="project-card">
+      <a href="ui-qihuan.html">
+        <img src="ui-qihuan/1.png" alt="UI-祁幻视界封面">
+        <h2>UI-祁幻视界</h2>
+        <p>UI设计 + 平面设计</p>
+      </a>
+    </div>
+
+    <!-- UI-靓耶 -->
+    <div class="project-card">
+      <a href="ui-liangye.html">
+        <img src="ui-liangye/1.png" alt="UI-靓耶封面">
+        <h2>UI-靓耶</h2>
+        <p>移动端UI设计</p>
+      </a>
+    </div>
+
+    <!-- UI-mojoy -->
+    <div class="project-card">
+      <a href="ui-mojoy.html">
+        <img src="ui-mojoy/1.png" alt="UI-mojoy封面">
+        <h2>UI-mojoy</h2>
+        <p>移动端UI设计</p>
+      </a>
+    </div>
+
+    <!-- 书籍+包装 -->
+    <div class="project-card">
+      <a href="book-pack.html">
+        <img src="book-pack/0.png" alt="书籍+包装封面">
+        <h2>书籍+包装设计</h2>
+        <p>大学时期书籍装帧与包装设计</p>
+      </a>
+    </div>
+
+    <!-- 运动表盘 -->
+    <div class="project-card">
+      <a href="watch-face.html">
+        <img src="watch-face/1.png" alt="运动表盘封面">
+        <h2>运动表盘设计</h2>
+        <p>智能手表表盘设计</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
