@@ -2,48 +2,123 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>WATCH-FACE | 杨婷的作品集</title>
+  <title>UI-表盘设计 | 杨婷的作品集</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: "微软雅黑", sans-serif;
-      background: #f8f9fa;
+      background: #f5f5f5;
     }
+    /* 返回按钮 */
     .back-btn {
-      display: inline-block;
-      margin: 20px;
-      padding: 8px 16px;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
       background: #007bff;
       color: white;
       text-decoration: none;
-      border-radius: 4px;
+      border-radius: 6px;
+      z-index: 999;
     }
+    /* 标题 */
     h1 {
       text-align: center;
-      margin: 20px 0;
+      padding: 60px 20px 20px;
+      color: #333;
     }
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 20px;
+    /* 图片容器：单列居中！ */
+    .images-container {
+      max-width: 1200px; /* 最大宽度，电脑上不会太宽 */
+      margin: 0 auto;
+      padding: 0 20px;
     }
-    .image-grid img {
+    /* 每张图片：居中，宽度自适应，高度自动！ */
+    .images-container img {
+      display: block;
       width: 100%;
       height: auto;
+      margin: 20px auto;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      cursor: zoom-in; /* 鼠标放上去显示可以放大 */
+    }
+    /* 点击放大的弹窗 */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal img {
+      max-width: 95%;
+      max-height: 95%;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+  <!-- 返回首页的按钮 -->
   <a href="index.html" class="back-btn">← 返回首页</a>
-  <h1>watch-face</h1>
 
-  <div class="image-grid">
-    <!-- 这里放你所有图片 -->
-    <img src="book-pack/1.png" alt="图1">
-    <img src="book-pack/2.png" alt="图2">
-    <img src="book-pack/3.png" alt="图3">
+  <!-- 项目标题 -->
+  <h1>UI-表盘设计</h1>
+
+  <!-- 所有图片都放这里！ -->
+  <div class="images-container">
+    <!-- 第一张图片 -->
+    <img src="watch-face/1.png" alt="第1页">
+    <!-- 第二张图片 -->
+    <img src="watch-face/2.png" alt="第2页">
+    <!-- 第三张图片 -->
+    <img src="watch-face/3.png" alt="第3页">
+     </div>
+
+  <!-- 点击放大的弹窗 -->
+  <div class="modal" id="imgModal">
+    <span class="close" id="closeModal">&times;</span>
+    <img id="modalImg" src="">
   </div>
+
+  <script>
+    // 点击图片放大的功能，和站酷一样！
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeBtn = document.getElementById('closeModal');
+
+    // 给所有图片加点击事件
+    const images = document.querySelectorAll('.images-container img');
+    images.forEach(img => {
+      img.onclick = function() {
+        modal.style.display = 'flex';
+        modalImg.src = this.src;
+      }
+    });
+
+    // 关闭弹窗
+    closeBtn.onclick = function() {
+      modal.style.display = 'none';
+    }
+    modal.onclick = function(e) {
+      if (e.target === modal) modal.style.display = 'none';
+    }
+  </script>
 </body>
 </html>
